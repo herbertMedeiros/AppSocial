@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Image, KeyboardAvoidingView } from 'react-native';
-import LoginForm from './LoginForm';
+import  LoginForm  from './LoginForm';
 
 export default class Login extends Component {
     render(){
@@ -11,8 +11,9 @@ export default class Login extends Component {
                 <View style={styles.formContainer}>
                         <Image
                             style={styles.logo} 
-                            source={require('../../images/BoaAcao.jpg')}/>
+                            source={require('../../images/BoaAcao.jpg')}/>  
                     <LoginForm/>
+                    
                 </View>
                 </KeyboardAvoidingView>
             </View>

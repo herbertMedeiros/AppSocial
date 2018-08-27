@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, Alert} from 'react-native';
+import  Principal  from '../../Home/Principal';
 
 const aperta = () =>{
     Alert.alert('Seja bem vindo!');
 }
-
+const semCadastro = () =>{
+    Alert.alert('Fazer cadastro!');
+}
 export default class LoginForm extends Component{
     render(){
         return(
@@ -23,12 +26,15 @@ export default class LoginForm extends Component{
                         secureTextEntry
                         style={styles.input}
                     />
-
+                 
+                    <Text style={styles.texto} onPress={semCadastro}>Ainda não tem cadastro? Click nessa!</Text>
+                    
+                  
                     <TouchableOpacity 
                         onPress={aperta}
                         style={styles.buttonContainer}>
                         <Text style={styles.buttonText}>ENTRAR</Text>
-                       
+                        
                     </TouchableOpacity>
                    
                 </View>
@@ -64,6 +70,13 @@ const styles = StyleSheet.create({
         marginBottom: 150,
         borderRadius: 8,
        
+    },
+
+    texto:{
+        textAlign: 'center',
+        color:'#FFFFFF',
+        fontWeight:'700',
+        marginBottom: 10
     },
 
     buttonText:{
