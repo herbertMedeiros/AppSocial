@@ -1,4 +1,4 @@
-package com.testetela;
+package com.goodaction;
 
 import android.app.Application;
 
