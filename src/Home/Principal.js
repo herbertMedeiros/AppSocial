@@ -6,8 +6,10 @@ import{
 } from "react-native";
 
 import { createBottomTabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 export class Principal extends Component{
+
     render(){
         return(
             <View>
@@ -18,6 +20,7 @@ export class Principal extends Component{
 }
 
 export class Configuracao extends Component{
+
     render(){
         return(
             <View>
@@ -28,6 +31,30 @@ export class Configuracao extends Component{
 }
 
 export default createBottomTabNavigator({
-    Principal: Principal,
-    Configuracao:Configuracao,
+    Principal: { screen: Principal,
+                navigationOptions:{
+                    tabBarLabel: 'Principal',
+                    tabBarIcon: ({tintColor}) => (
+                      <Icon name="layers" color={tintColor} size={25} />
+                    )
+                }},
+    Configuracao: { screen: Configuracao,
+                  navigationOptions:{
+                      tabBarLabel: 'Configurações',
+                      tabBarIcon: ({tintColor}) => (
+                        <Icon name="diamond" color={tintColor} size={25} />
+                      )
+                  }},
+},{
+  initialRouteName: 'Principal',
+  order: ['Principal', 'Configuracao'],
+
+  navigationOptions: {
+    tabBarVisible: true
+  },
+
+  tabBarOptions: {
+    activeTintColor: 'green',
+    inactiveTintColor: 'gray'
+  }
 });
